@@ -39,7 +39,9 @@ a {
 }
 
 /* Chat Page */
-
+.reciever{
+	background-color:blue ;
+}
 .chat-container {
 	max-width: 1100px;
 	background: #fff;
@@ -82,7 +84,7 @@ a {
 }
 
 .chat-sidebar ul li {
-	padding: 10px 0;
+	padding: 10px 45px;
 }
 
 .chat-messages {
@@ -97,6 +99,9 @@ a {
 	background-color: var(--light-color);
 	border-radius: 5px;
 	overflow-wrap: break-word;
+	width: fit-content;
+	
+	
 }
 
 .chat-messages .message .meta {
@@ -109,6 +114,7 @@ a {
 
 .chat-messages .message .meta span {
 	color: #777;
+	padding: 5px;
 }
 
 .chat-form-container {
@@ -121,6 +127,13 @@ a {
 }
 
 .chat-form-container input[type='text'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	flex: 1;
+}
+
+.chat-form-container input[type='password'] {
 	font-size: 16px;
 	padding: 5px;
 	height: 40px;
@@ -167,6 +180,13 @@ a {
 	width: 100%;
 }
 
+.join-main input[type='password'] {
+	font-size: 16px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+}
+
 .join-main select {
 	font-size: 16px;
 	padding: 5px;
@@ -179,6 +199,56 @@ a {
 	width: 100%;
 }
 
+.selected{
+    background-color: hsl(202, 95%, 49%);
+}
+ul {
+	list-style: none;
+  }
+  li {
+	position: relative;
+	padding-left: 15px;
+	margin-bottom: 15px;
+  }
+  li:hover{
+	cursor: pointer;
+	background-color: hsl(202, 95%, 49%);;
+  }
+  
+ .active::before {
+	content: "•";
+	color: #2de0a5;
+	font-size: 50px;
+	position: absolute;
+	left:24px;
+	bottom: -12px;
+  }
+
+  .type::after {
+	content: "is Typing...";
+	color: #eb1111;
+	font-size: 15px;
+	position: absolute;
+	left:89px;
+	bottom: 10px;
+	font-weight: bold;
+  }
+
+.dot {
+	height: 5px;
+	width: 5px;
+	background-color: #00FF00;
+	border-radius: 50%;
+	display: block;
+  }
+  
+  .messages{
+	display: none;
+  }
+  
+  .active{
+		display: block; 
+  }
 @media (max-width: 700px) {
 	.chat-main {
 		display: block;

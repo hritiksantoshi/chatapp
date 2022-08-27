@@ -19,7 +19,7 @@
 				<h1><i class="fas fa-smile"></i> ChatCord</h1>
 			</header>
 			<main class="join-main">
-				<form action="chat.html">
+				<form action="http://localhost:3000/signIn" id="formdata" method="post">
 					<div class="form-control">
 						<label for="username">Username</label>
 						<input
@@ -31,19 +31,28 @@
 						/>
 					</div>
 					<div class="form-control">
-						<label for="room">Room</label>
-						<select name="room" id="room">
-							<option value="JavaScript">JavaScript</option>
-							<option value="Python">Python</option>
-							<option value="PHP">PHP</option>
-							<option value="C#">C#</option>
-							<option value="Ruby">Ruby</option>
-							<option value="Java">Java</option>
-						</select>
+						<label for="psw">Password</label>
+						<input type="password" id="pwd" name="pwd" placeholder="Enter password..." required/>
 					</div>
-					<button type="submit" class="btn">Join Chat</button>
+					<button type="submit" id="submit" class="btn">SignIn</button>
 				</form>
+				<script>
+					if("{{message}}"){
+					alert("{{message}}");
+					window.location.href = '/'
+					}
+                    
+
+
+					</script>
+
 			</main>
 		</div>
 	</body>
+	<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+   
 </html>

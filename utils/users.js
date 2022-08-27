@@ -1,13 +1,40 @@
+
 const users = [];
 
 // Join user to chat
-function userJoin(id, username, room) {
-  const user = { id, username, room };
+function userJoin(id, username) {
 
-  users.push(user);
+  const user = { id, username };
 
-  return user;
+    
+    users.push(user);
+    console.log(users);
+    return user;
+   
+  }
+  
+async function userExist(username,password){
+  try{
+    let user = await Model.users.findOne({
+      email:username
+    });
+
+    if (!user) return {
+      
+  };
+
+  }
+  catch (error) {
+
+    throw error;
+
 }
+}
+
+function activeUser(){
+  return users;
+}
+
 
 // Get current user
 function getCurrentUser(id) {
@@ -28,9 +55,16 @@ function getRoomUsers(room) {
   return users.filter(user => user.room === room);
 }
 
+
+function getclient(name){
+  return users.find(user => user.username === name);
+}
+
 module.exports = {
   userJoin,
   getCurrentUser,
   userLeave,
-  getRoomUsers
+  getRoomUsers,
+  activeUser,
+  getclient
 };
